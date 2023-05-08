@@ -24,7 +24,7 @@
                         <p class="card-text"><span style="font-weight: bolder;">Descripcion: </span>{{p.descripcion}}</p>
                         <p class="card-text" style="font-weight: bolder;"> ${{p.price}}</p>
                         <p class="card-text"><span style="font-weight: bolder;">Stock: </span>{{p.stock}}</p>
-                        <a href="#" class="btn btn-primary">Comprar</a>
+                        <a href="{% url 'make_order' p.id %}" class="btn btn-primary">Comprar</a>
                     </div>
                 </div>
             </div>

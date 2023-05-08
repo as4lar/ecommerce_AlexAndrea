@@ -60,4 +60,17 @@ class deleteProduct(View):
         product.delete()
         return redirect('products')
 
+productsQueue=[]
+total=0
+class makeOrder(View):
+    def get(self, request,id):
+        product=Product.objects.get(id=id)
+        context={'product': product}
+        global total
+        total+=int(product.price)
+        productsQueue.append(product)
+        print(total)
+        print(productsQueue)
+        return render(request, 'products/product.html', context)
+        
 
