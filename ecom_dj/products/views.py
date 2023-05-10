@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.views import View
 from products.models import Product
 from .forms import ProductCreate
+from django.contrib import messages
 # Create your views here.
 class Products(View):
     def get(self, request):
@@ -65,12 +66,19 @@ total=0
 class makeOrder(View):
     def get(self, request,id):
         product=Product.objects.get(id=id)
-        context={'product': product}
+        print("Producto:", product)
         global total
         total+=int(product.price)
         productsQueue.append(product)
+        context={'productos': productsQueue,'total':total}
         print(total)
         print(productsQueue)
-        return render(request, 'products/product.html', context)
+        return render(request, 'cart/cartprods.html', context)
         
+class payOrder(View):
+    def get(self, request):
+        messages.success(request,'¡Gracias por su compra!')
+        productsQueue.clear()
+        total=0
+        return redirect('index')
 

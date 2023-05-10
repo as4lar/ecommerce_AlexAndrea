@@ -15,6 +15,6 @@ class Product(models.Model):
     stock=models.IntegerField()
     descripcion=models.CharField(max_length=50, null=True, blank= True)
     brand=models.ForeignKey(Brand, null=True, blank=True, on_delete=models.CASCADE)
-    
+    image_link=models.CharField(max_length=150)
     def __str__(self):
         return self.name
