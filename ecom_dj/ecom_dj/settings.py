@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles','home','products', 'user', 'shopping',
     #THIRD PARTY APPS
-    'crispy_forms','crispy_bootstrap5'
+    'crispy_forms','crispy_bootstrap5',
 ]
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 
@@ -130,3 +130,4 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CRISPY_TEMPLATE_PACK='Bootstrap5'
 
+LOGOUT_REDIRECT_URL = 'index'

@@ -1,7 +1,5 @@
-*{
-    font-family:'Times New Roman', Times, serif
-}
-nav.navbar {
+
+nav {
     background-color: #483D8B;
 }
 nav.navbar a{

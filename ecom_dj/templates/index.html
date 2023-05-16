@@ -1,64 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ecommerce Django</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/Hola.css' %}">
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'index'%}">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'products'%}">Products</a>
-                </li>
-                </ul>
-                <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-            </div>
-        </div>
-    </nav>
-    {% for msg in messages%}
+{% extends 'base.html'%}
+{% block content %}
+{% for msg in messages%}
     <div class="alert alert-success" role="alert">
         <strong>{{msg}}</strong>
     </div>
-    {% endfor%}
-    <h1 style="text-align: center;">Bienvenido a mi E-commerce</h1>
+{% endfor%}
+    <div>
+        <h1 style="text-align: center; color: #00008B;">Bienvenido a mi E-commerce</h1>
+    </div>
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="https://wallpaperaccess.com/full/85194.jpg" class="d-block w-100" alt="banner1">
+                <img src="https://img.optimalcdn.com/www.elhorizonte.mx/2023/01/d008d1fd998e3ce3af7eaadac69ca93f4418fb14/shoping-regio-se-reactiva.webp" class="d-block w-100" alt="banner1">
             </div>
             <div class="carousel-item">
-                <img src="https://www.raconteur.net/wp-content/uploads/2022/01/Web-images-Jan-2022-8.jpg" class="d-block w-100" alt="banner2">
+                <img src="https://t3.ftcdn.net/jpg/02/71/77/56/360_F_271775672_yo8ZgraN2IHGbfqP2k0PsLjwvmatUNUJ.jpg" class="d-block w-100" alt="banner2">
             </div>
             <div class="carousel-item">
-                <img src="https://elrincondechina.com/wp-content/uploads/2020/07/samsung-logo-base-erdc.jpg" class="d-block w-100" alt="banner3">
+                <img src="https://photos.desired.de/2c/08/f1/3cefa14a0764ff4a0fc21190e2_cmUgMTkyMCAxMDgwAzI4M2Y0N2ZhYzFl_shoppen.jpg" class="d-block w-100" alt="banner3">
             </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-</body>
-</html>
+        </button>
+    </div>
+{% endblock %}
+
